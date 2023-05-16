@@ -30,9 +30,7 @@ export class QuizzComponent implements OnInit{
    if(this.quizz){    
     this.title = this.quizz.title
     this.questions = this.quizz.questions;
-    this.questionSelected = this.questions[this.questionIndex];   
-    console.log(this.questionIndex);
-         
+    this.questionSelected = this.questions[this.questionIndex];            
    }
   }
 
@@ -55,8 +53,7 @@ export class QuizzComponent implements OnInit{
     }
     else{
       const finalAnswers = await this.checkResult(this.answers);
-     this.answersSelected = this.quizz.results[finalAnswers as keyof typeof
-                                              this.quizz.results] 
+     this.answersSelected = this.quizz.results[finalAnswers] 
 
     }
   }
